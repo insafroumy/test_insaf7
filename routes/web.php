@@ -44,6 +44,10 @@ Route::post('/about', function () {
     return view('about', compact('name','departments'));
 });
 
+Route::get('app', function(){
+    return view('layouts.app');
+});
+
 Route::get('tasks', [TaskController::class, 'index']);
 
 Route::post('create', [TaskController::class, 'create']);
@@ -54,17 +58,15 @@ Route::post('edit/{id}',[TaskController::class,'edit'] );
 
 Route::post('update',[TaskController::class,'update']);
 
-Route::get('app', function(){
-    return view('layouts.app');
-});
+
 
 Route::get('users', [UserController::class, 'index']);
 
-Route::post('create', [UserController::class, 'create']);
+Route::post('create_users', [UserController::class, 'create_users']);
 
-Route::post('delete/{id}',[UserController::class, 'destroy']);
+Route::post('delete_users/{id}',[UserController::class, 'destroy_users']);
 
-Route::post('edit/{id}',[UserController::class,'edit'] );
+Route::post('edit_users/{id}',[UserController::class,'edit_users'] );
 
-Route::post('update',[UserController::class,'update']);
+Route::post('update_users',[UserController::class,'update_users']);
 

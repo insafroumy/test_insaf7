@@ -10,7 +10,7 @@
             </div>
             <div class="card-body">
                 <!-- Update User Form -->
-                <form action="{{url('update')}}" method="POST">
+                <form action="{{url('update_users')}}" method="POST">
                     @csrf
                     <input type="hidden" name="id" value="{{$user->id}}">
                     <!-- User Name -->
@@ -28,7 +28,7 @@
                     <!-- User Password-->
                     <div class="mb-3">
                         <label for="user-Password" class="form-label">Password</label>
-                        <input type="password" name="password" id="user-Password" class="form-control" value="{{$user->password}}">
+                        <input type="password" name="password" id="user-Password" class="form-control" value="">
                     </div>
 
                     <!-- Update User Button -->
@@ -45,7 +45,7 @@
             </div>
             <div class="card-body">
                 <!-- New User Form -->
-                <form action="create" method="POST">
+                <form action="create_users" method="POST">
                     @csrf
                     <!-- User Name -->
                     <div class="mb-3">
@@ -94,13 +94,13 @@
                         <tr>
                             <td>{{$user->name}}</td>
                             <td>
-                                <form action="/delete/{{$user->id}}" method="POST" class="d-inline">
+                                <form action="/delete_users/{{$user->id}}" method="POST" class="d-inline">
                                     @csrf
                                     <button type="submit" class="btn btn-danger">
                                         <i class="fa fa-trash me-2"></i>Delete
                                     </button>
                                 </form>
-                                <form action="/edit/{{$user->id}}" method="POST" class="d-inline">
+                                <form action="/edit_users/{{$user->id}}" method="POST" class="d-inline">
                                     @csrf
                                     <button type="submit" class="btn btn-info">
                                         <i class="fa fa-info me-2"></i>Edit
